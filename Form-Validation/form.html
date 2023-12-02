@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form-validation</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Registration Form</h1>
+      <form action="" class="form" onsubmit="return validation(event)">
+        <div class="input-box">
+          <input type="text" id="f-Name" placeholder="Full Name" /><span
+            id="us-name"
+          ></span>
+        </div>
+
+        <div class="input-box">
+          <input type="text" id="email" placeholder="Email" /><span
+            id="em-name"
+          ></span>
+        </div>
+
+        <div class="input-box">
+          <input type="text" id="number" placeholder="Number" /><span
+            id="p-name"
+          ></span>
+        </div>
+
+        <div class="input-box">
+          <input type="password" id="password" placeholder="Password" /><span
+            id="pass-name"
+          ></span>
+        </div>
+
+        <div class="gender-box">
+          <p>Gender</p>
+          <div class="gender-option" id="g-name">
+            <div class="gender">
+              <label for="radio_male">Male</label>
+              <input type="radio" name="gender" id="radio_male" />
+            </div>
+            <div class="gender">
+              <label for="radio_female">Female</label>
+              <input type="radio" name="gender" id="radio_female" />
+            </div>
+            <div class="gender">
+              <label for="radio_other">Other</label>
+              <input type="radio" name="gender" id="radio_other" checked/>
+            </div>
+          </div>
+        </div>
+
+        <div class="checked">
+          <p>Select Your qualification</p>
+          <div class="gurop" id="c-name">
+            <div class="gurop-1">
+              <label for="t_12">12th:</label>
+              <input type="checkbox" id="t_12" checked/>
+            </div>
+
+            <div class="gurop-1">
+              <label for="graduate">Graduate:</label>
+              <input type="checkbox" id="graduate" />
+            </div>
+
+            <div class="gurop-1">
+              <label for="p_grad">Post Graduate:</label>
+              <input type="checkbox" id="p_grad" />
+            </div>
+
+            <div class="gurop-1">
+              <label for="b-tech">B Tech:</label>
+              <input type="checkbox" id="b-tech" />
+            </div>
+          </div>
+        </div>
+
+        <div class="selecting">
+          <select id="seleced" id="select-name">
+            <option value='' >--Select Country--</option>
+            <option value="india" selected>Inida</option>
+            <option value="pakistan">Pakistan</option>
+            <option value="america">America</option>
+            <option value="englend">Englend</option>
+          </select>
+        </div>
+        <div class="btn-submit">
+          <!-- <input type="button" onclick="validation(event)"value="submit" /> -->
+          <!-- <button onclick="validation(event)">Submit</button> -->
+          <input type="submit" value="submit" />
+        </div>
+      </form>
+
+    </div>
+  </body>
+  <!-- <script src="form.js"></script> -->
+</html>
+
+      <script>
+        function validation(e) {
+          // e.preventDefault()
+          let userName = document.getElementById("f-Name");
+          let userEmail = document.getElementById("email");
+          let userNumber = document.getElementById("number");
+          let userPassword = document.getElementById("password");
+          let userGender = document.getElementById("g-name")
+          let userChecked = document.getElementById("c-name")
+          let userSelect = document.getElementsByName("select")
+           
+        //   console.log(userGender)
+        //   console.log(userChecked)
+        //   console.log(userSelect)
+          console.log(userName)
+          console.log(userEmail.value)
+          console.log(userNumber.value)
+          console.log(userPassword)
+        
+
+
+        //   if(userName.value.trim() === ""&& userEmail.value.trim() === "" && userNumber.value.trim() === "" && userPassword.value.trim() === "" && userGender.value === "" && userChecked.value === "" && userSelect.value === ""){
+
+        //     alert("Please Requrid Details")
+        //     return false;
+        //   }
+          if(userName.value.trim() === ""&& userEmail.value.trim() === "" && userNumber.value.trim() === "" && userPassword.value.trim() === ""){
+            alert("Please Requrid Details")
+            return false;
+
+          }
+     
+
+
+
+          if (userName.value.trim() === "") {
+            document.getElementById("us-name").innerText =
+              "Please Enter Your Name";
+            return false;
+          } else if (!isNaN(userName.value)) {
+            document.getElementById("us-name").innerText =
+              " Character Allow only";
+            return false;
+          } else if (userEmail.value.trim() === "") {
+            document.getElementById("em-name").innerText = "Enter Your Email";
+            return false;
+          } else if (userEmail.value.length < 20) {
+            document.getElementById("em-name").innerText = "Please Valid Email";
+            return false;
+          } else if (userEmail.value.length > 30) {
+            document.getElementById("em-name").innerText =
+              "Please Email langth Is Not Valid";
+            return false;
+          } else if (isNaN(userEmail.value.trim().length)) {
+            document.getElementById("em-name").innerText =
+              "Email Is Not Start Number";
+            return false;
+          } else if (userNumber.value.trim() === "") {
+            document.getElementById("p-name").innerText =
+              "Enter Your Phone Number";
+            return false;
+          } else if (isNaN(userNumber.value.trim())) {
+            document.getElementById("p-name").innerText =
+              "Enter Your only Number";
+            return false;
+          } else if (userNumber.value.length < 6) {
+            document.getElementById("p-name").innerText =
+              "Minimam Six Digit Number";
+            return false;
+          } else if (userNumber.value.length > 6) {
+            document.getElementById("p-name").innerText = "Six Digit ";
+            return false;
+          }  else if (userPassword.value.trim() ===  "") {
+            document.getElementById("pass-name").innerText = " Plase Password Enter ";
+            return false;
+          } 
+          
+          
+          
+          
+          
+          
+          
+          
+          else {
+            return true;
+          }
+                  
+
+
+
+        }
+      </script>

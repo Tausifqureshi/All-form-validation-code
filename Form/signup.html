@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration and Login Form</title>
+    <link rel="stylesheet" href="form.css">
+    <style>
+        input{
+            display: block;
+            width: 50%;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+
+</head>
+<body>
+    <section>
+        <h1>SIGN UP</h1>
+       <form onsubmit="signUp(event); return false">  <!--is tara se bhi page referece nhi hoga-->
+        <input type="text" id="s-name" placeholder="Enter your Full Name"><span id="u-name"></span>
+        <input type="text" id="phone" placeholder="Enter Your Phone Number"><span id="pho-name"></span>
+        <input type="text" id="email" placeholder="Enter your Email"><span id="e-name"></span>
+        <input type="text" id="pass" placeholder="Enter Your Password"><span id="p-name"></span>
+
+        <p style="margin-left: 1rem;cursor: pointer; ">Have An Account?<b><a href="./login.html" style="text-decoration: none;">LOGIN</a></b></p>
+        <button type="submit">SIGN UP</button>
+        
+
+       </form>
+
+    </section>
+  
+    
+    
+
+
+    <script src="signup.js"></script>
+</body>
+</html>

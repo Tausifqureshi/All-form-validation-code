@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+    <style>
+        form input{
+            display: block;
+            width: 50%;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            margin-left: 1rem;
+
+
+        }
+        span{
+            color: red;
+            margin-left: 1rem; 
+        }
+
+
+        button{
+            background-color: #0660e6e8;
+            color: #fff;
+            margin-top: 1rem;
+            margin-left: 1rem;
+            padding: 0.8em;
+            border: none;
+            outline: none;
+            border-radius: 7px;
+            
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <form onsubmit="login(event) ; return false">
+            <h1 style="margin-left: 1rem;">LOGIN</h1>
+            <input type="text" id="email" placeholder="Enter your Email"><span id="e-name"></span>
+            <input type="text" id="password" placeholder="Enter Your Password"><span id="p-name"></span>
+            <p style="margin-left: 1rem;cursor: pointer; ">Don't have an account?<b><a href="./signup.html" style="text-decoration: none;">Create an Account</a></b></p>
+             <button type="submit">LOGIN</button>
+
+        </form>        
+    </section>
+    <script>
+     
+
+    </script>
+    <Script src="login.js"></Script>
+        
+
+</body>
+</html>
